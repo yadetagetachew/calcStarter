@@ -23,31 +23,31 @@
 					<input type="text" id="display" class="col-12 text-right form-control" value="0">
 				</div> <!-- .row -->
 				<div class="row">
-					<button class="col-9 btn btn-lg btn-outline-dark" id="ac" onclick="operatorDisplay()">AC</button> <!-- 0 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="divide" onclick="operatorDisplay()">/</button> <!-- 1 -->
+					<button class="col-9 btn btn-lg btn-outline-dark" id="ac" >AC</button> <!-- 0 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="divide" >/</button> <!-- 1 -->
 				</div> <!-- .row -->
 				<div class="row">
-					<button class="col-3 btn btn-lg btn-outline-dark" id="seven" onclick="numberDisplay()">7</button> <!-- 2 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="eight" onclick="numberDisplay()">8</button> <!-- 3 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="nine" onclick="numberDisplay()">9</button> <!-- 4 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="multiply" onclick="operatorDisplay()">x</button> <!-- 5 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="seven" >7</button> <!-- 2 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="eight" >8</button> <!-- 3 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="nine" >9</button> <!-- 4 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="multiply">x</button> <!-- 5 -->
 				</div> <!-- .row -->
 				<div class="row">
-					<button class="col-3 btn btn-lg btn-outline-dark" id="four" onclick="numberDisplay()">4</button> <!-- 6 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="five" onclick="numberDisplay()">5</button> <!-- 7 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="six" onclick="numberDisplay()">6</button> <!-- 8 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="subtract" onclick="operatorDisplay()">-</button> <!-- 9 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="four" >4</button> <!-- 6 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="five" >5</button> <!-- 7 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="six" >6</button> <!-- 8 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="subtract">-</button> <!-- 9 -->
 				</div> <!-- .row -->
 				<div class="row">
-					<button class="col-3 btn btn-lg btn-outline-dark" id="one" onclick="numberDisplay()" >1</button> <!-- 10 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="two" onclick="numberDisplay()">2</button> <!-- 11 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="three" onclick="numberDisplay()">3</button> <!-- 12 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="add"  onclick="operatorDisplay()">+</button> <!-- 13 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="one" >1</button> <!-- 10 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="two">2</button> <!-- 11 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="three">3</button> <!-- 12 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="add">+</button> <!-- 13 -->
 				</div> <!-- .row -->
 				<div class="row">
-					<button class="col-6 btn btn-lg btn-outline-dark" id="zero" onclick="numberDisplay()">0</button> <!-- 14 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="decimal" onclick="numberDisplay()">.</button> <!-- 15 -->
-					<button class="col-3 btn btn-lg btn-outline-dark" id="equal" onclick="operatorDisplay()">=</button> <!-- 16 -->
+					<button class="col-6 btn btn-lg btn-outline-dark" id="zero" >0</button> <!-- 14 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="decimal">.</button> <!-- 15 -->
+					<button class="col-3 btn btn-lg btn-outline-dark" id="equal" >=</button> <!-- 16 -->
 				</div> <!-- .row -->
 			</div> <!-- #calculator -->
 		</div> <!-- .row -->
@@ -69,119 +69,123 @@
 			3. Clear 'display' variable
 		    */
 
-//  operator value
-function calculator(num1, operator, num2) {
-	if (operator === "+") {
-	return num1 + num2;
-}
-else if (operator === "*"){
-	return num1 * num2;
-}
-else if (operator === "-"){
-	return num1 - num2;
-}
-else if (operator === "/"){
-	return num1 / num2;
-}
-else if (operator === "^"){
-	return Math.pow(num1, num2);
-}
-else if (operator === "%"){
-	return num1 % num2;
-}
-else {
-	return "NaN" 
-}
-}
-console.log(calculator(1, "+", 2))
+let display = document.querySelector('#display').value
+let operator
+let num1
+let num2
+
+
+
+
+
 
 // display numbers
-document.querySelector('#one').onclick = function numberDisplay() {
+document.querySelector('#one').onclick = function () {
 			display = display+'1';
 			display = parseInt(display);
-			document.querySelector('#display').value = 1;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#two').onclick = function numberDisplay() {
+		document.querySelector('#two').onclick = function () {
 			display = display+'2';
 			display = parseInt(display);
-			document.querySelector('#display').value = 2;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#three').onclick = function numberDisplay() {
+		document.querySelector('#three').onclick = function () {
 			display = display+'3';
 			display = parseInt(display);
-			document.querySelector('#display').value = 3;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#four').onclick = function numberDisplay() {
+		document.querySelector('#four').onclick = function () {
 			display = display+'4';
 			display = parseInt(display);
-			document.querySelector('#display').value = 4;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#five').onclick = function numberDisplay() {
+		document.querySelector('#five').onclick = function () {
 			display = display+'5';
 			display = parseInt(display);
-			document.querySelector('#display').value = 5;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#six').onclick = function numberDisplay() {
+		document.querySelector('#six').onclick = function () {
 			display = display+'6';
 			display = parseInt(display);
-			document.querySelector('#display').value = 6;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#seven').onclick = function numberDisplay() {
+		document.querySelector('#seven').onclick = function () {
 			display = display+'7';
 			display = parseInt(display);
-			document.querySelector('#display').value = 7;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#eight').onclick = function numberDisplay() {
+		document.querySelector('#eight').onclick = function () {
 			display = display+'8';
 			display = parseInt(display);
-			document.querySelector('#display').value = 8;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#nine').onclick = function numberDisplay() {
+		document.querySelector('#nine').onclick = function () {
 			display = display+'9';
 			display = parseInt(display);
-			document.querySelector('#display').value = 9;
+			document.querySelector('#display').value = display;
 		}
-		document.querySelector('#zero').onclick = function numberDisplay() {
+		document.querySelector('#zero').onclick = function () {
 			display = display+'0';
 			display = parseInt(display);
-			document.querySelector('#display').value = 0;
+			document.querySelector('#display').value = display;
+		}
+		document.querySelector('#decimal').onclick = function () {
+			// display = display + '.' + 
+			document.querySelector('#display').value = display;
 		}
 
 // display operators
-document.querySelector('#divide').onclick = function operatorDisplay() {
-			display = display+'/';
-			display = parseInt(display);
+document.querySelector('#divide').onclick = function () {
+			num1 = display
+			display = '0';
+			operator = '/'
 			document.querySelector('#display').value = '/';
 		}
-		document.querySelector('#multiply').onclick = function operatorDisplay() {
-			display = display+'*';
-			display = parseInt(display);
-			document.querySelector('#display').value = '*';
+		document.querySelector('#multiply').onclick = function () {
+			num1 = display
+			operator = 'x'
+			display = '0';
+			document.querySelector('#display').value = 'x';
 		}
-		document.querySelector('#add').onclick = function operatorDisplay() {
-			display = display+'+';
-			display = parseInt(display);
+		document.querySelector('#add').onclick = function () {
+			num1 = display
+			operator = '+'
+			display = '0';
 			document.querySelector('#display').value = '+';
 		}
-		document.querySelector('#subtract').onclick = function operatorDisplay() {
-			display = display+'-';
-			display = parseInt(display);
+		document.querySelector('#subtract').onclick = function () {
+			num1 = display
+			operator = '-'
+			display = '0';
 			document.querySelector('#display').value = '-';
 		}
-		document.querySelector('#equal').onclick = function operatorDisplay() {
-			display = display+'=';
-			display = parseInt(display);
-			document.querySelector('#display').value = '=';
+		document.querySelector('#ac').onclick = function () {
+			display = '0';
+			document.querySelector('#display').value = '0';
 		}
-		document.querySelector('#decimal').onclick = function operatorDisplay() {
-			display = display+'.';
-			display = parseInt(display);
-			document.querySelector('#display').value = '.';
-		}
-		document.querySelector('#ac').onclick = function operatorDisplay() {
-			display = display+'';
-			display = parseInt(display);
-			document.querySelector('#display').value = '';
+
+
+
+		document.querySelector('#equal').onclick = function () {
+			let num2 = document.querySelector('#display').value
+			num2 = parseInt(num2)
+			let answer
+			if (operator == "+") {
+			answer = num1 + num2;
+			}
+			else if (operator == "x"){
+				answer = num1 * num2;
+			}
+			else if (operator == "-"){
+				answer = num1 - num2;
+			}
+			else if (operator == "/"){
+				answer = num1 / num2;
+			}
+
+			document.querySelector('#display').value = answer
+			display = answer
 		}
 		
 	</script>
